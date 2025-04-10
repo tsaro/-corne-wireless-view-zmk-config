@@ -27,7 +27,7 @@
                 compatible = "zmk,behavior-tap-dance";
                 #binding-cells = <0>;
                 tapping-term-ms = <200>;
-                bindings = <&mo 2>, <&mo 1>;
+                bindings = <&mo 1>, <&mo 2>;
             };    
         };
         keymap {
@@ -47,20 +47,6 @@
                   &kp LGUI &td2 &mt LCTRL SPACE   &kp RET &lt 2 SPACE &mt LCTRL GRAVE
                         >;
                 };
-                raise_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |  UP |     |     |   \   |
-// | SHFT | SOFF|    |OUT_TOG|    |     |   |     | LFT | DWN | RGT |  [   |   ]   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        display-name = "Raise";
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans   &trans   &kp UP    &trans       &trans &kp BSLH
-   &trans     &soft_off    &trans       &out OUT_TOG &trans       &trans         &trans   &kp LEFT &kp DOWN  &kp RIGHT    &kp LBKT &kp RBKT
-                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RCTRL
-                        >;
-                };
 
                 lower_layer {
 // -----------------------------------------------------------------------------------------
@@ -76,5 +62,21 @@
                     	     &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &trans
                         >;
                 };
+                raise_layer {
+// -----------------------------------------------------------------------------------------
+// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   |     |     |  UP |     |     |   \   |
+// | SHFT | SOFF|    |OUT_TOG|    |     |   |     | LFT | DWN | RGT |  [   |   ]   |
+//                    | GUI |     | SPC |   | ENT |     | ALT |
+                        display-name = "Raise";
+                        bindings = <
+   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8    &kp N9       &kp N0 &kp BSPC
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &trans   &trans   &kp UP    &trans       &trans &kp BSLH
+   &trans     &soft_off    &trans       &out OUT_TOG &trans       &trans         &trans   &kp LEFT &kp DOWN  &kp RIGHT    &kp LBKT &kp RBKT
+                          	        &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RCTRL
+                        >;
+                };
+
+
         };
 };
